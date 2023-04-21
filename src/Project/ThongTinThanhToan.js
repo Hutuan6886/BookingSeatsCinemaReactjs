@@ -14,18 +14,18 @@ class ThongTinThanhToan extends Component {
         return this.props.propgheDangChon.map((itemGhe, index) => {
             return <tr key={index}>
                 <td className='border'>{itemGhe.soGhe}</td>
-                <td className='border'>{itemGhe.gia}</td>
+                <td className='border'>{(itemGhe.gia).toLocaleString()}</td>
                 <button style={{transform:'translateY(50%)'}} onClick={() => {this.props.dispatch(huyGheAction(itemGhe))}} className='bg-transparent'><i class="fa fa-times-circle text-danger"></i></button>
             </tr>
         })
     }
     render() {
         return (
-            <div>
+            <div className='mt-5'>
                 <h4>Thanh Toán</h4>
                 <div>
-                    <p className='font-weight-bold'>Họ Và Tên:<span>{this.props.propTen}</span></p>
-                    <p className='font-weight-bold'>Số lượng ghế:<span>{this.props.propSLGhe}</span></p>
+                    <p className='font-weight-bold'>Họ và Tên:<span className='ml-2 font-weight-normal'>{this.props.propTen}</span></p>
+                    <p className='font-weight-bold'>Số lượng ghế:<span className='ml-2 font-weight-normal'>{this.props.propSLGhe}</span></p>
                 </div>
                 <table className="table text-light">
                     <thead>

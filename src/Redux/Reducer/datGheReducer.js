@@ -3,7 +3,7 @@ import { CHON_GHE, GET_INFO, HUY_GHE } from "../Types/datGheTypes";
 const stateDatGhe = {
     gheDangChon: [],
 
-    ten:'',
+    ten: '',
     soLuongGhe: 0,
 }
 
@@ -15,17 +15,17 @@ const datGheReducer = (state = stateDatGhe, action) => {
             let soLuongGheCapNhat = state.soLuongGhe;
 
             let index = gheDangChonCapNhat.findIndex(ghe => ghe.soGhe === action.itemGhe.soGhe)
-            console.log(index);
-            console.log(gheDangChonCapNhat);
+
+
             if (index !== -1) {
                 gheDangChonCapNhat.splice(index, 1);
                 soLuongGheCapNhat += 1;
-                console.log('soLuongGheCapNhat splice',soLuongGheCapNhat);
+                console.log('soLuongGheCapNhat splice', soLuongGheCapNhat);
             }
             else if (index === -1 && soLuongGheCapNhat >= 1) {
                 gheDangChonCapNhat.push(action.itemGhe);
                 soLuongGheCapNhat -= 1;
-                console.log('soLuongGheCapNhat push',soLuongGheCapNhat);
+                console.log('soLuongGheCapNhat push', soLuongGheCapNhat);
             }
 
             state.soLuongGhe = soLuongGheCapNhat;
@@ -46,13 +46,13 @@ const datGheReducer = (state = stateDatGhe, action) => {
             let soLuongGheCapNhat = state.soLuongGhe;
 
             tenCapNhat = action.itemObject.name;
-            if(tenCapNhat !== ''){
+            if (tenCapNhat !== '') {
                 soLuongGheCapNhat = action.itemObject.sl;
             }
-            else{
-                alert('Điền tên và số ghế muốn chọn!!!');
+            else {
+                alert('Vui lòng điền đầy đủ thông tin !!!');
             }
-            
+
             state.ten = tenCapNhat;
             state.soLuongGhe = soLuongGheCapNhat;
 

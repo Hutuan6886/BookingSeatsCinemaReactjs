@@ -51,7 +51,7 @@ const mapStateToProps = state => {
     return {
         propgheDangChon: state.datGheReducer.gheDangChon,
         propTen: state.datGheReducer.ten,
-        propSLGhe: state.datGheReducer.soLuongGhe,
+        propSLGhe: state.datGheReducer.soLuongGheThanhToan,
     }
 }
 
